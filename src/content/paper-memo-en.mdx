@@ -14,6 +14,7 @@ import MetricsTable from "../components/MetricsTable.astro";
 import Glossary from "../components/Glossary.astro";
 import Timeline from "../components/Timeline.astro";
 import Callout from "../components/Callout.astro";
+import BaselineShowcase from "../components/BaselineShowcase.astro";
 
 <Section
   id="resources"
@@ -148,11 +149,20 @@ import Callout from "../components/Callout.astro";
 </Section>
 
 <Section
+  id="experiments"
+  title="Baseline Experiment Viewer"
+  summary="Following the academic project-page style, this interactive viewer summarizes the implementation workflow from preprocessing to model evaluation."
+>
+  <BaselineShowcase language="en" />
+</Section>
+
+<Section
   id="metrics"
   title="Performance Metrics"
   summary="Dice is the main metric. A value closer to 1 means stronger overlap between the predicted mask and the ground-truth annotation."
 >
   <MetricsTable
+    language="en"
     rows={[
       {
         structure: "Intervertebral Discs",

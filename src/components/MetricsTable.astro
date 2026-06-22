@@ -8,18 +8,20 @@ interface MetricRow {
 
 interface Props {
   rows: MetricRow[];
+  language?: "ja" | "en";
 }
 
-const { rows } = Astro.props;
+const { rows, language = "ja" } = Astro.props;
+const headers =
+  language === "en"
+    ? ["Structure", "Dice", "IoU", "Interpretation"]
+    : ["構造", "Dice", "IoU", "意味"];
 ---
 
 <table class="result-table">
   <thead>
     <tr>
-      <th>構造</th>
-      <th>Dice</th>
-      <th>IoU</th>
-      <th>意味</th>
+      {headers.map((header) => <th>{header}</th>)}
     </tr>
   </thead>
   <tbody>

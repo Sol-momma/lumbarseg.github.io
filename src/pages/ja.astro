@@ -1,5 +1,5 @@
 ---
-import NotesContent, { frontmatter } from "../content/learning-notes.mdx";
+import MemoContent, { frontmatter } from "../content/paper-memo.mdx";
 import MemoLayout from "../layouts/MemoLayout.astro";
 ---
 
@@ -7,7 +7,6 @@ import MemoLayout from "../layouts/MemoLayout.astro";
   title={frontmatter.title}
   description={frontmatter.description}
   language="ja"
-  page="notes"
 >
-  <NotesContent />
+  <MemoContent />
 </MemoLayout>

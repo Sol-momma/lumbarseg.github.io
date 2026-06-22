@@ -1,8 +1,12 @@
 ---
-import MemoContent, { frontmatter } from "../content/paper-memo.mdx";
+import MemoContent, { frontmatter } from "../content/paper-memo-en.mdx";
 import MemoLayout from "../layouts/MemoLayout.astro";
 ---
 
-<MemoLayout title={frontmatter.title} description={frontmatter.description}>
+<MemoLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  language="en"
+>
   <MemoContent />
 </MemoLayout>
