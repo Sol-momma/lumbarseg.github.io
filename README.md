@@ -20,6 +20,14 @@ npm run build
 This repository is intended to be published with GitHub Pages, separate from the main research/code repository:
 
 - Code: `Sol-momma/LumbarSeg`
-- Website: `lumbarseg.github.io`
+- Website source: `lumbarseg.github.io`
 
-If this is pushed under the `Sol-momma` account and should be served at `https://sol-momma.github.io/`, rename the GitHub repository to `Sol-momma.github.io` and update `site` in `astro.config.mjs`.
+The public site is intended to be served from the existing user Pages repository under:
+
+```text
+https://sol-momma.github.io/lumbarseg/
+```
+
+The Astro `base` setting is configured for that path so generated CSS, JavaScript, PDFs, and page links resolve correctly.
+
+Build this repository, then publish the generated `dist/` contents into the `lumbarseg/` directory of `Sol-momma/Sol-momma.github.io`.
