@@ -1,33 +1,55 @@
 # LumbarSeg Website
 
-This repository contains the source code for the LumbarSeg project website.
+腰椎MRIセグメンテーション研究 LumbarSeg のプロジェクトページ（Astro）のソースです。
 
-## Development
+Source for the project page of [LumbarSeg](https://github.com/Sol-momma/LumbarSeg), a research project on four-class lumbar spine MRI segmentation (vertebrae, spinal canal and intervertebral discs) with a Modified U-Net.
 
-```bash
-npm install
-npm run dev
+Live: https://sol-momma.github.io/lumbarseg/
+
+![LumbarSeg project page](docs/images/home.png)
+
+## What the site contains
+
+- Overview of the target paper (Ahmed et al., 2025) and the SPIDER dataset
+- Data flow, method, label mapping and metrics sections
+- Reproduction results and resources (paper and dataset PDFs)
+- Study notes page
+- English and Japanese pages (`/en`, `/ja`)
+
+## Usage
+
+Node.js 22 and npm are used (same as CI).
+
+```sh
+git clone https://github.com/Sol-momma/lumbarseg.github.io.git
+cd lumbarseg.github.io
+npm ci
+npm run dev       # local dev server
+npm run build     # static output in dist/
+npm run format:check
 ```
 
-## Build
+The Astro `base` is `/lumbarseg`, so pages, CSS, JavaScript and PDFs resolve under `https://sol-momma.github.io/lumbarseg/`.
 
-```bash
-npm run build
-```
+## Deployment
 
-## Publishing
+[.github/workflows/pages.yml](.github/workflows/pages.yml) builds the site on every pull request and deploys `dist/` to GitHub Pages on pushes to `main`.
 
-This repository is intended to be published with GitHub Pages, separate from the main research/code repository:
-
-- Code: `Sol-momma/LumbarSeg`
-- Website source: `lumbarseg.github.io`
-
-The public site is intended to be served from the existing user Pages repository under:
+## Project structure
 
 ```text
-https://sol-momma.github.io/lumbarseg/
+src/pages/        # index, en, ja, notes
+src/components/   # page sections (data flow, metrics, timeline, glossary ...)
+src/content/      # MDX: paper memo (ja / en) and learning notes
+public/           # hero image, paper PDFs, small client script
 ```
 
-The Astro `base` setting is configured for that path so generated CSS, JavaScript, PDFs, and page links resolve correctly.
+## Tech stack
 
-Build this repository, then publish the generated `dist/` contents into the `lumbarseg/` directory of `Sol-momma/Sol-momma.github.io`.
+- [Astro](https://astro.build/) with MDX, static output
+- Prettier
+- GitHub Pages and GitHub Actions
+
+## License
+
+No license file for the site source. The paper and dataset PDFs in `public/papers/` belong to their authors.
