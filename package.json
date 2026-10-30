@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "build:cf": "SITE_URL=https://lumbarseg.sol-momma.com SITE_BASE=/ astro build",
+    "deploy:cf": "npm run build:cf && wrangler deploy"
   },
   "engines": {
     "node": ">=22.12.0"

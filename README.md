@@ -22,12 +22,11 @@ This repository is intended to be published with GitHub Pages, separate from the
 - Code: `Sol-momma/LumbarSeg`
 - Website source: `lumbarseg.github.io`
 
-The public site is intended to be served from the existing user Pages repository under:
+The public site is served by Cloudflare Workers static assets at:
 
 ```text
-https://sol-momma.github.io/lumbarseg/
+https://lumbarseg.sol-momma.com/
 ```
 
-The Astro `base` setting is configured for that path so generated CSS, JavaScript, PDFs, and page links resolve correctly.
-
-Build this repository, then publish the generated `dist/` contents into the `lumbarseg/` directory of `Sol-momma/Sol-momma.github.io`.
+Deploy with `npm run deploy:cf` (builds with `SITE_BASE=/` and runs `wrangler deploy`).
+The legacy copy at `https://sol-momma.github.io/lumbarseg/` (built with the default `base: "/lumbarseg"`) is still online.
