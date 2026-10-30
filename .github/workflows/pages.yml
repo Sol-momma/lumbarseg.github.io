@@ -36,11 +36,11 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Upload Pages artifact
+      - name: Upload Pages artifact (redirect pages only; site moved to lumbarseg.sol-momma.com)
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: pages-redirect
 
   deploy:
     name: Deploy
