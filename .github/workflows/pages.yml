@@ -38,7 +38,7 @@ jobs:
 
       - name: Upload Pages artifact (redirect pages only; site moved to lumbarseg.sol-momma.com)
         if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: pages-redirect
 
