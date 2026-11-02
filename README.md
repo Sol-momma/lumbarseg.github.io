@@ -1,3 +1,5 @@
+**English** | [日本語](README.ja.md)
+
 # LumbarSeg Website
 
 This repository contains the source code for the LumbarSeg project website.
